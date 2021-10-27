@@ -1,6 +1,6 @@
 // CONSTANTS
 const BASE_URL = 'https://api.nasa.gov/planetary/apod';
-const API_KEY = '';
+const API_KEY = 'Q12TTtYUnHgSTgAoxuKf2ibl9JgdCQf6lnM3qEZl';
 
 // STATE VARIABLES
 let apiData;
