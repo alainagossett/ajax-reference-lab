@@ -25,17 +25,24 @@ main {
 
 section {
     display: flex;
-    width: 900px;
+    width: 60rem;
     flex-wrap: wrap;
     margin: 6.25rem auto;
 }
 
 article {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 1rem;
+    color: #ffffffdc;
+    text-shadow: 2px 4px 8px #000000;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
     width: 300px;
     height: 12.5rem;
+    margin: .15rem;
 }
 
 footer {

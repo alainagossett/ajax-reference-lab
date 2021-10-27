@@ -17,7 +17,7 @@ getData();
 
 function getData() {
     //get API data and assign it to our apiData variable
-    $.ajax(BASE_URL + '?api_key=' + API_KEY + '&count=6')
+    $.ajax(BASE_URL + '?api_key=' + API_KEY + '&count=9')
     .then(function(data) {
         apiData = data;
         render();
