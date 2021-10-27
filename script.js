@@ -1,5 +1,5 @@
 // CONSTANTS
-const BASE_URL = '';
+const BASE_URL = 'https://api.nasa.gov/planetary/apod';
 const API_KEY = '';
 
 // STATE VARIABLES
@@ -15,9 +15,16 @@ const $main = $('main');
 // FUNCTIONS
 function getData() {
     //get API data and assign it to our apiData variable
+    $.ajax(BASE_URL + '?api_key=' + API_KEY + '&count=6')
+    .then(function(data) {
+        apiData = data;
+        render();
+    }, function(error) {
 
+    });
 }
 
 function render() {
     //transfer API data to the DOM
+    console.log(apiData);
 }
