@@ -26,5 +26,12 @@ function getData() {
 
 function render() {
     //transfer API data to the DOM
-    console.log(apiData);
+    const photoCards = apiData.map(function(photoObject) {
+        return `
+            <article style="background-image: url(${photoObject.url})">
+                <h3>${photoObject.title}</h3>
+            </article>`;
+    })
+    console.log(photoCards);
+    $main.html(photoCards);
 }
