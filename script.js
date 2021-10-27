@@ -10,7 +10,7 @@ const $main = $('main');
 
 
 // EVENT LISTENERS
-
+$main.on('click', 'article', handleHover);
 
 // FUNCTIONS
 getData();
@@ -26,12 +26,19 @@ function getData() {
     });
 }
 
+function handleHover() {
+    $(this).children('h3').fadeOut(900, function() {
+        $(this).siblings().toggleClass('hidden');
+    });
+}
+
 function render() {
     //transfer API data to the DOM
     const photoCards = apiData.map(function(photoObject) {
         return `
             <article style="background-image: url(${photoObject.url})">
                 <h3>${photoObject.title}</h3>
+                <p class="hidden">${photoObject.explanation}</p>
             </article>`;
     }).join('');
     $main.html(`<section>${photoCards}</section>`);
