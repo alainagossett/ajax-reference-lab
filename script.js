@@ -13,6 +13,8 @@ const $main = $('main');
 
 
 // FUNCTIONS
+getData();
+
 function getData() {
     //get API data and assign it to our apiData variable
     $.ajax(BASE_URL + '?api_key=' + API_KEY + '&count=6')
@@ -31,7 +33,6 @@ function render() {
             <article style="background-image: url(${photoObject.url})">
                 <h3>${photoObject.title}</h3>
             </article>`;
-    })
-    console.log(photoCards);
-    $main.html(photoCards);
+    }).join('');
+    $main.html(`<section>${photoCards}</section>`);
 }
